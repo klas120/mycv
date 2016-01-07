@@ -1,0 +1,41 @@
+﻿
+@model IEnumerable<OdeToFood.Models.RestaurantListViewModel>
+
+
+@{
+    ViewBag.Title = "Página principal";
+}
+@section featured {
+    <section class="featured">
+        <div class="content-wrapper">
+            <hgroup class="title">
+                <h1>A</h1>
+                <h2>B</h2>
+            </hgroup>
+            <p>
+                Entity FrameWork.
+            </p>
+        </div>
+    </section>
+}
+
+<form method="get">
+    <input type="search" name="searchTerm" />
+    <input type="submit" value="Search by Name" />
+</form>
+
+@Html.Action("SayHello")
+
+@foreach(var item in Model)
+{
+    <div>
+        <h4>@item.Name</h4>
+        <div>@item.City, @item.Country</div>
+        <div>
+            Reviews: @item.CountOfViews
+
+        </div> 
+        <hr />
+    </div>
+}
+
